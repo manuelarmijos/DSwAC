@@ -1,0 +1,33 @@
+{% extends "./base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+Pasaje
+{% endblock %}
+
+{% block body %}
+
+<center>
+    <article>
+        {% load static %}
+        <img src="{% static 'logo.png' %}" alt="No se encontro imagen no encontrada" width="200px" height="100px"
+            height="220">
+    </article>
+</center>
+<h2>Gestión de Pasajeros</h2>
+<div class="card">
+    <div class="card-body">
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <hr>
+            <div class="d-flex justify-content-center">
+                <input type="reset" value="Cancelar" class="btn btn-secondary">
+                &nbsp;
+                <input type="submit" value="Editar" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock body %}
